@@ -1,0 +1,33 @@
+import { useState } from "react";
+import SearchBar from "./SearchBar";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { FaUserCircle } from "react-icons/fa";
+import { GrSearch } from "react-icons/gr";
+import Logo from "/youtube_logo.png";
+
+const Header = () => {
+  return (
+    <div className="flex justify-between py-3 px-4 md:py-1 items-center">
+      {/* Hamburger Icon */}
+      <div className="flex items-center gap-7">
+        <div className="p-1 hover:cursor-pointer">
+          <RxHamburgerMenu size={20} />
+        </div>
+        {/* Youtube Logo */}
+        <div className="hover:cursor-pointer hidden md:block">
+          <img className="h-14" src={Logo} alt="Youtube-Logo" />
+        </div>
+      </div>
+      {/* Search Component */}
+      <div className="">
+        <SearchBar />
+      </div>
+      {/* User Icon */}
+      <div className="p-1 hover:cursor-pointer">
+        <FaUserCircle size={30} />
+      </div>
+    </div>
+  );
+};
+
+export default Header;
