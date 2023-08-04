@@ -10,22 +10,25 @@ import { IoIosMusicalNote } from "react-icons/io";
 import { AiOutlineTrophy } from "react-icons/ai";
 import { SiYoutubegaming } from "react-icons/si";
 import { MdMovie } from "react-icons/md";
+import { useSelector } from "react-redux";
 
 const SideBar = () => {
-  return (
-    <div className="w-52 p-4">
+  const isSideBarOpen = useSelector((store) => store.sideBar.isSideBarOpen);
+
+  return !isSideBarOpen ? null : (
+    <div className="w-56 p-4 pt-0 shadow-md">
       {/* 3 Links */}
-      <section>
-        <ul>
-          <li>
-            <AiFillHome />
+      <section className="pb-4 border-b-[1.5px] border-gray-300">
+        <ul className="flex flex-col gap-1 ">
+          <li className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 hover:cursor-pointer ">
+            <AiFillHome size={22} />
             Home
           </li>
-          <li>
+          <li className="flex items-center gap-4 px-3 py-2 rounded-lg hover:bg-gray-100 hover:cursor-pointer">
             <MdAppShortcut />
             Shorts
           </li>
-          <li>
+          <li className="flex items-center gap-4 px-3 py-2 rounded-lg hover:bg-gray-100 hover:cursor-pointer">
             <MdOutlineSubscriptions />
             Subscriptions
           </li>
@@ -33,21 +36,21 @@ const SideBar = () => {
       </section>
 
       {/* 4 Links */}
-      <section>
+      <section className="pb-4 pt-4 border-b-[1.5px] border-gray-300">
         <ul>
-          <li>
+          <li className="flex items-center gap-4 px-3 py-2 rounded-lg hover:bg-gray-100 hover:cursor-pointer">
             <MdVideoLibrary />
             Library
           </li>
-          <li>
+          <li className="flex items-center gap-4 px-3 py-2 rounded-lg hover:bg-gray-100 hover:cursor-pointer">
             <GoHistory />
             History
           </li>
-          <li>
+          <li className="flex items-center gap-4 px-3 py-2 rounded-lg hover:bg-gray-100 hover:cursor-pointer">
             <MdOutlineWatchLater />
             Watch Later
           </li>
-          <li>
+          <li className="flex items-center gap-4 px-3 py-2 rounded-lg hover:bg-gray-100 hover:cursor-pointer">
             <AiOutlineLike />
             Liked videos
           </li>
@@ -55,21 +58,21 @@ const SideBar = () => {
       </section>
 
       {/* Explore Section*/}
-      <section>
+      <section className="pb-4 pt-4">
         <ul>
-          <li>
+          <li className="flex items-center gap-4 px-3 py-2 rounded-lg hover:bg-gray-100 hover:cursor-pointer">
             <IoIosMusicalNote />
             Music
           </li>
-          <li>
+          <li className="flex items-center gap-4 px-3 py-2 rounded-lg hover:bg-gray-100 hover:cursor-pointer">
             <AiOutlineTrophy />
             Sports
           </li>
-          <li>
+          <li className="flex items-center gap-4 px-3 py-2 rounded-lg hover:bg-gray-100 hover:cursor-pointer">
             <SiYoutubegaming />
             Gaming
           </li>
-          <li>
+          <li className="flex items-center gap-4 px-3 py-2 rounded-lg hover:bg-gray-100 hover:cursor-pointer">
             <MdMovie />
             Movies
           </li>
