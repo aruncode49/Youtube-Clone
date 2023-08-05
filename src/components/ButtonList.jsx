@@ -14,6 +14,7 @@ const ButtonList = () => {
       <BodyButton name="News" />
       <BodyButton name="History" />
       <BodyButton name="Computer Science" />
+      <BodyButton name="Recently uloaded" />
     </div>
   );
 };

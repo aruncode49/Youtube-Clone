@@ -15,7 +15,7 @@ const Header = () => {
   };
 
   return (
-    <div className="flex justify-between py-3 px-4 md:py-1 items-center">
+    <div className="flex justify-between py-3 px-4 md:py-1 items-center bg-white">
       {/* Hamburger Icon */}
       <div className="flex items-center gap-7">
         <div
