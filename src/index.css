@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@media screen and (max-width: 700px) {
+  .videoCard {
+    min-width: 100%;
+  }
+  .videoCard-img,
+  .videoCard-heading,
+  .videoCard-p,
+  .videoCard-end {
+    min-width: 100%;
+  }
+}

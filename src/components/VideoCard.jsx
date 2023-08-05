@@ -7,7 +7,6 @@ import { calculateTimeDifference } from "../utils/constants";
 const VideoCard = ({ info }) => {
   // Early return
   if (!info) return null;
-  console.log(info);
   const { snippet, statistics } = info;
   const { title, thumbnails, channelTitle, publishedAt } = snippet;
 
@@ -19,18 +18,20 @@ const VideoCard = ({ info }) => {
   const time = calculateTimeDifference(calcTime);
 
   return (
-    <div className="">
+    <div className="videoCard">
       <img
-        className="rounded-lg"
+        className="videoCard-img rounded-lg"
         src={thumbnails?.medium?.url}
         alt="Video Thumbnail"
       />
-      <h1 className="pt-2 px-2 font-medium max-w-[20rem]">{title}</h1>
-      <p className="max-w-[20rem] px-2 pt-1 flex items-center gap-1.5 text-gray-700">
+      <h1 className="videoCard-heading pt-2 px-2 font-medium max-w-[20rem]">
+        {title}
+      </h1>
+      <p className="videoCard-p max-w-[20rem] px-2 pt-1 flex items-center gap-1.5 text-gray-700">
         <TiSocialYoutubeCircular size={28} />
         {channelTitle}
       </p>
-      <div className="max-w-[20rem] px-2 flex gap-2 text-sm text-gray-700">
+      <div className="videoCard-end max-w-[20rem] px-2 flex gap-2 text-sm text-gray-700">
         <p>{views} views . </p>
         <p>{time}</p>
       </div>

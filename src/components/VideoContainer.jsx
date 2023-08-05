@@ -17,7 +17,7 @@ const VideoContainer = () => {
   };
 
   return (
-    <div className="p-3 pt-5 flex flex-wrap gap-4 justify-normal md:justify-center">
+    <div className="p-3 pt-5 flex flex-wrap gap-5 justify-center">
       {videos.map((video) => (
         <VideoCard key={video.id} info={video} />
       ))}
