@@ -13,8 +13,8 @@ const ButtonList = () => {
       <BodyButton name="Cooking" />
       <BodyButton name="News" />
       <BodyButton name="History" />
-      <BodyButton name="Computer Science" />
-      <BodyButton name="Recently uloaded" />
+      <BodyButton name="Coding" />
+      <BodyButton name="GeeksForGeeks" />
     </div>
   );
 };
