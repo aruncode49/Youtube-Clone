@@ -19,7 +19,7 @@ export function calculateViews(views) {
 export function calculateTimeDifference(calcTime) {
   let time;
   if (calcTime.minutes >= 60 && calcTime.days < 1) {
-    return (time = calcTime.hours + " hour go");
+    return (time = calcTime.hours + " hour ago");
   } else if (calcTime.days > 0 && calcTime.days < 30) {
     return (time = calcTime.days + " day ago");
   } else if (calcTime.months >= 1 && calcTime.years < 1) {
