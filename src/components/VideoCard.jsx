@@ -9,6 +9,7 @@ const VideoCard = ({ info }) => {
   if (!info) return null;
   const { snippet, statistics } = info;
   const { title, thumbnails, channelTitle, publishedAt } = snippet;
+  console.log(info);
 
   // Correcting Views Count
   const views = calculateViews(statistics?.viewCount);
@@ -20,8 +21,8 @@ const VideoCard = ({ info }) => {
   return (
     <div className="videoCard">
       <img
-        className="videoCard-img rounded-lg"
-        src={thumbnails?.medium?.url}
+        className="videoCard-img rounded-lg w-auto md:w-[320px]"
+        src={thumbnails?.maxres?.url}
         alt="Video Thumbnail"
       />
       <h1 className="videoCard-heading pt-2 px-2 font-medium max-w-[20rem]">

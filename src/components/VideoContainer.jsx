@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { YOUTUBE_VIDEOS_API } from "../utils/constants";
 import VideoCard from "./VideoCard";
+import VideoShimmer from "./VideoShimmer";
 
 const VideoContainer = () => {
   const [videos, setVideos] = useState([]);
@@ -16,7 +17,9 @@ const VideoContainer = () => {
     setVideos(data?.items);
   };
 
-  return (
+  return videos.length === 0 ? (
+    <VideoShimmer />
+  ) : (
     <div className="p-3 pt-5 flex flex-wrap gap-5 justify-center">
       {videos.map((video) => (
         <VideoCard key={video.id} info={video} />
