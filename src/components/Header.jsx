@@ -1,4 +1,3 @@
-import { useState } from "react";
 import SearchBar from "./SearchBar";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { FaUserCircle } from "react-icons/fa";
@@ -25,9 +24,11 @@ const Header = () => {
           <RxHamburgerMenu size={20} />
         </div>
         {/* Youtube Logo */}
-        <div className="hover:cursor-pointer hidden md:block">
-          <img className="h-14" src={Logo} alt="Youtube-Logo" />
-        </div>
+        <a href="/">
+          <div className="hover:cursor-pointer hidden md:block">
+            <img className="h-14" src={Logo} alt="Youtube-Logo" />
+          </div>
+        </a>
       </div>
       {/* Search Component */}
       <div className="">

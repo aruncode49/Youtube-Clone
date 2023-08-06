@@ -6,7 +6,7 @@ const VideoShimmer = () => {
       {Array(50)
         .fill("")
         .map((e, index) => (
-          <div>
+          <div key={index}>
             <div className="w-[22rem]  md:w-[20rem] h-[11.25rem] rounded-lg bg-gray-300"></div>
             <div className="flex items-center gap-3 mt-2">
               <div className="w-9 h-9 bg-gray-300 rounded-full"></div>

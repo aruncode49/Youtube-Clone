@@ -9,7 +9,6 @@ const VideoCard = ({ info }) => {
   if (!info) return null;
   const { snippet, statistics } = info;
   const { title, thumbnails, channelTitle, publishedAt } = snippet;
-  console.log(info);
 
   // Correcting Views Count
   const views = calculateViews(statistics?.viewCount);
@@ -19,7 +18,7 @@ const VideoCard = ({ info }) => {
   const time = calculateTimeDifference(calcTime);
 
   // Early return for the thumbnail reason
-  if (!thumbnails.maxres) return null;
+  if (!thumbnails.maxres) return;
 
   return (
     <div className="videoCard hover:cursor-pointer">
