@@ -20,7 +20,7 @@ const VideoContainer = () => {
   return videos.length === 0 ? (
     <VideoShimmer />
   ) : (
-    <div className="p-3 pt-5 flex flex-wrap gap-5 justify-center">
+    <div className="p-3 pt-5 flex flex-wrap gap-y-8 gap-5 justify-center">
       {videos.map((video) => (
         <VideoCard key={video.id} info={video} />
       ))}

@@ -18,8 +18,11 @@ const VideoCard = ({ info }) => {
   const calcTime = calculateTimeDistanceToNow(publishedAt);
   const time = calculateTimeDifference(calcTime);
 
+  // Early return for the thumbnail reason
+  if (!thumbnails.maxres) return null;
+
   return (
-    <div className="videoCard">
+    <div className="videoCard hover:cursor-pointer">
       <img
         className="videoCard-img rounded-lg w-auto md:w-[320px]"
         src={thumbnails?.maxres?.url}
