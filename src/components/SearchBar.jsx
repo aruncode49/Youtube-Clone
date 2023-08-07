@@ -1,21 +1,62 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { GrSearch } from "react-icons/gr";
+import { YOUTUBE_SEARCH_API } from "../utils/constants";
 
 const SearchBar = () => {
-  return (
-    <div className="flex ">
-      <div>
-        <input
-          type="text"
-          placeholder="Search"
-          spellCheck={false}
-          className="w-[50vw] outline-none text-lg h-8 px-3 py-[1.125rem] border border-gray-500 rounded-l-full"
-        />
-      </div>
+  const [searchQuery, setSearchQuery] = useState("");
+  const [suggestion, setSuggestions] = useState([]);
+  const [showSuggestion, setShowSuggestion] = useState();
 
-      <div className="flex items-center h-8 px-5 py-[1.125rem] border border-gray-500 border-l-0 rounded-r-full bg-gray-100 hover:cursor-pointer">
-        <GrSearch size={20} />
+  useEffect(() => {
+    const timer = setTimeout(() => getSearchSearchQuerys(), 200);
+    // Debouncing with clear interval
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [searchQuery]);
+
+  const getSearchSearchQuerys = async () => {
+    const response = await fetch(YOUTUBE_SEARCH_API + searchQuery);
+    const data = await response.json();
+    setSuggestions(data[1]);
+    console.log(suggestion);
+  };
+
+  return (
+    <div className="">
+      <div className="flex ">
+        <div>
+          <input
+            type="text"
+            placeholder="Search"
+            spellCheck={false}
+            className="w-[50vw] outline-none text-base md:text-lg h-8 px-6 py-[1.125rem] border border-gray-500 rounded-l-full"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            onFocus={() => setShowSuggestion(true)}
+            onBlur={() => setShowSuggestion(false)}
+          />
+        </div>
+
+        <div className="flex items-center h-8 px-5 py-[1.125rem] border border-gray-500 border-l-0 rounded-r-full bg-gray-100 hover:cursor-pointer">
+          <GrSearch size={20} />
+        </div>
       </div>
+      {showSuggestion && (
+        <div className="fixed w-[50vw] bg-white py-2 rounded-lg border border-gray-300 shadow-lg">
+          <ul>
+            {suggestion.map((data, index) => (
+              <li
+                key={index}
+                className="flex gap-2 items-center text-base px-3 py-1 font-medium hover:bg-[#F0F0F0] cursor-default"
+              >
+                <GrSearch />
+                {data}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 };
