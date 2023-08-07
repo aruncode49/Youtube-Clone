@@ -27,7 +27,7 @@ const VideoCard = ({ info }) => {
         src={thumbnails?.maxres?.url}
         alt="Video Thumbnail"
       />
-      <h1 className="videoCard-heading pt-2 px-2 font-medium max-w-[20rem]">
+      <h1 className="videoCard-heading pt-2 px-2 font-medium max-w-[20rem] line-clamp-2">
         {title}
       </h1>
       <p className="videoCard-p max-w-[20rem] px-2 pt-1 flex items-center gap-1.5 text-gray-700">
