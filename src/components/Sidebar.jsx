@@ -16,7 +16,7 @@ const SideBar = () => {
   const isSideBarOpen = useSelector((store) => store.sideBar.isSideBarOpen);
 
   return !isSideBarOpen ? null : (
-    <div className="w-56 p-4 pt-0 shadow-md absolute bg-white">
+    <div className="w-56 p-4 pt-0 fixed top-14 h-[100vh] z-40 bg-white">
       {/* 3 Links */}
       <section className="pb-4 border-b-[1.5px] border-gray-300">
         <ul className="flex flex-col gap-1 ">

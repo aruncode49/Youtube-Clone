@@ -22,6 +22,10 @@ const SearchBar = () => {
     console.log(suggestion);
   };
 
+  // hide Suggestion div
+  let hideSuggestion;
+  if (suggestion.length == 0) hideSuggestion = " hidden";
+
   return (
     <div className="">
       <div className="flex ">
@@ -43,7 +47,12 @@ const SearchBar = () => {
         </div>
       </div>
       {showSuggestion && (
-        <div className="fixed w-[50vw] bg-white py-2 rounded-lg border border-gray-300 shadow-lg">
+        <div
+          className={
+            "fixed w-[50vw] bg-white py-2 rounded-lg border border-gray-300 shadow-lg" +
+            hideSuggestion
+          }
+        >
           <ul>
             {suggestion.map((data, index) => (
               <li

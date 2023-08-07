@@ -13,7 +13,7 @@ const SideBarButtons = () => {
   );
 
   return !isSideBarButtonsOpen ? null : (
-    <div className="px-1 hidden md:block bg-white">
+    <div className="fixed top-16 px-1 hidden md:block bg-white">
       <Link to={"/"}>
         <div className="flex flex-col items-center justify-center gap-1 py-4 hover:bg-[#F0F0F0] hover:rounded-lg hover:cursor-pointer">
           <AiFillHome size={22} />

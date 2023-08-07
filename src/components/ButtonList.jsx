@@ -3,7 +3,7 @@ import BodyButton from "./BodyButton";
 
 const ButtonList = () => {
   return (
-    <div className="flex py-2 overflow-x-auto">
+    <div className="fixed mt-[3.75rem] md:ml-[78px] md:w-full z-20 bg-white top flex py-2 overflow-x-auto">
       <BodyButton name="All" />
       <BodyButton name="Gaming" />
       <BodyButton name="Songs" />
