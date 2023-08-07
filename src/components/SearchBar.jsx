@@ -8,6 +8,7 @@ const SearchBar = () => {
         <input
           type="text"
           placeholder="Search"
+          spellCheck={false}
           className="w-[50vw] outline-none text-lg h-8 px-3 py-[1.125rem] border border-gray-500 rounded-l-full"
         />
       </div>
