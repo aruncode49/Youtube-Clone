@@ -2,7 +2,7 @@ import React from "react";
 
 const VideoShimmer = () => {
   return (
-    <div className="p-3 pt-5 flex flex-wrap gap-5 justify-center">
+    <div className="mt-28 md:ml-[70px] p-3 pt-5 flex flex-wrap gap-5 justify-center">
       {Array(50)
         .fill("")
         .map((e, index) => (

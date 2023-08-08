@@ -1,19 +1,17 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { closeSideBarButtons } from "../utils/sideBarButtonSlice";
 import { useSearchParams } from "react-router-dom";
+import { closeSideBarButtons } from "../utils/sideBarButtonSlice";
 
 const WatchPage = () => {
   const [searchParams] = useSearchParams();
   const paramId = searchParams.get("v");
-  console.log(paramId);
 
-  // close sideBar buttons
   const dispatch = useDispatch();
   dispatch(closeSideBarButtons(false));
 
   return (
-    <div className="px-7 pt-4">
+    <div className="px-5 md:px-7 mt-20">
       <iframe
         width="622"
         height="360"

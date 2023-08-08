@@ -7,19 +7,21 @@ const SearchBar = () => {
   const [suggestion, setSuggestions] = useState([]);
   const [showSuggestion, setShowSuggestion] = useState();
 
+  // Debouncing with clear interval
   useEffect(() => {
-    const timer = setTimeout(() => getSearchSearchQuerys(), 200);
-    // Debouncing with clear interval
+    const timer = setTimeout(() => {
+      getSearchSuggestions();
+    }, 200);
+
     return () => {
       clearTimeout(timer);
     };
   }, [searchQuery]);
 
-  const getSearchSearchQuerys = async () => {
+  const getSearchSuggestions = async () => {
     const response = await fetch(YOUTUBE_SEARCH_API + searchQuery);
     const data = await response.json();
     setSuggestions(data[1]);
-    console.log(suggestion);
   };
 
   // hide Suggestion div

@@ -11,6 +11,7 @@ import { AiOutlineTrophy } from "react-icons/ai";
 import { SiYoutubegaming } from "react-icons/si";
 import { MdMovie } from "react-icons/md";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const SideBar = () => {
   const isSideBarOpen = useSelector((store) => store.sideBar.isSideBarOpen);
@@ -20,10 +21,12 @@ const SideBar = () => {
       {/* 3 Links */}
       <section className="pb-4 border-b-[1.5px] border-gray-300">
         <ul className="flex flex-col gap-1 ">
-          <li className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 hover:cursor-pointer ">
-            <AiFillHome size={22} />
-            Home
-          </li>
+          <Link to="/">
+            <li className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 hover:cursor-pointer ">
+              <AiFillHome size={22} />
+              Home
+            </li>
+          </Link>
           <li className="flex items-center gap-4 px-3 py-2 rounded-lg hover:bg-gray-100 hover:cursor-pointer">
             <MdAppShortcut />
             Shorts

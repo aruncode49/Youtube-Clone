@@ -5,7 +5,6 @@ import { MdOutlineSubscriptions } from "react-icons/md";
 import { MdVideoLibrary } from "react-icons/md";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import store from "../utils/store";
 
 const SideBarButtons = () => {
   const isSideBarButtonsOpen = useSelector(

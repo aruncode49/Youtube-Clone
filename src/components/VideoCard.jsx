@@ -1,8 +1,8 @@
 import React from "react";
 import { TiSocialYoutubeCircular } from "react-icons/ti";
-import { calculateTimeDistanceToNow } from "../utils/calculateTimeDistance";
-import { calculateViews } from "../utils/constants";
-import { calculateTimeDifference } from "../utils/constants";
+import { calculateTimeDifference } from "../utils/calculationFunction";
+import { calculateTimeDistanceToNow } from "../utils/calculationFunction";
+import { calculateViews } from "../utils/calculationFunction";
 
 const VideoCard = ({ info }) => {
   // Early return
