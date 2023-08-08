@@ -12,7 +12,7 @@ const WatchPage = () => {
   dispatch(closeSideBarButtons(false));
 
   return (
-    <div className="mx-5 md:mx-7 mt-20">
+    <div className="mx-5 md:mx-7 mt-20 overflow-y-hidden">
       <iframe
         width="622"
         height="360"
