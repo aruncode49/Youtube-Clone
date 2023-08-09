@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import { closeSideBarButtons } from "../utils/sideBarButtonSlice";
 import CommentContainer from "./CommentContainer";
 
 const WatchPage = () => {
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const paramId = searchParams.get("v");
 
   const dispatch = useDispatch();
-  dispatch(closeSideBarButtons(false));
+  useEffect(() => {
+    dispatch(closeSideBarButtons(false));
+  }, []);
 
   return (
     <div className="mx-5 md:mx-7 mt-20 overflow-y-hidden">

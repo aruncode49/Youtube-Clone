@@ -63,8 +63,8 @@ const Comments = ({ data }) => {
 
 const CommentList = ({ comments }) => {
   return comments.map((comment, index) => (
-    <div>
-      <Comments key={index} data={comment} />
+    <div key={index}>
+      <Comments data={comment} />
       <div className="pl-5 border-l border-l-gray-500">
         <CommentList comments={comment.reply} />
       </div>
