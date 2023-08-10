@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const sideBarButtonSlice = createSlice({
   name: "sideBarButtons",
   initialState: {
-    isSideBarButtons: Boolean,
+    isSideBarButtons: Boolean(true),
   },
   reducers: {
     closeSideBarButtons: (state, action) => {
