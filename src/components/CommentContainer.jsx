@@ -75,7 +75,6 @@ const CommentList = ({ comments }) => {
 const CommentContainer = () => {
   return (
     <div className="pt-3 mb-8">
-      <h1 className="text-lg font-medium mb-2">Comments:👇🏻</h1>
       <CommentList comments={commentsData} />
     </div>
   );

@@ -14,6 +14,15 @@ const WatchPage = () => {
   // Access the search query from getVideoDetailsSlice
   const searchQuery = useSelector((store) => store.getVideoDetail.searchQuery);
 
+  // commentDisplayHandler function
+  const commentDisplayHandler = () => {
+    if (isCommentOn) {
+      setIsCommentOn(false);
+    } else {
+      setIsCommentOn(true);
+    }
+  };
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(closeSideBarButtons(false));
@@ -40,15 +49,25 @@ const WatchPage = () => {
 
   return (
     <div className="mx-5 md:mx-7 mt-20 overflow-y-hidden">
-      <iframe
-        width="622"
-        height="360"
-        src={"https://www.youtube.com/embed/" + paramId}
-        title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullScreen
-      ></iframe>
-      {isCommentOn && <CommentContainer />}
+      <div>
+        <iframe
+          width="622"
+          height="360"
+          src={"https://www.youtube.com/embed/" + paramId}
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        ></iframe>
+        <div>
+          <h1
+            className="text-lg font-medium mt-2 border bg-gray-600 text-white p-2 cursor-pointer rounded-md"
+            onClick={commentDisplayHandler}
+          >
+            Comments: {isCommentOn ? "⬆️" : "⬇️"}
+          </h1>
+          {isCommentOn && <CommentContainer />}
+        </div>
+      </div>
     </div>
   );
 };
