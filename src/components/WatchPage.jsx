@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import { closeSideBarButtons } from "../utils/sideBarButtonSlice";
 import CommentContainer from "./CommentContainer";
-import { GOOGLE_API_KEY } from "../utils/constants";
+import CommentVideosCard from "./CommentVideosCard";
+import { Link } from "react-router-dom";
 
 const WatchPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -37,19 +38,23 @@ const WatchPage = () => {
     const res = await fetch(
       `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${
         searchQuery + "videos"
-      }&key=` + GOOGLE_API_KEY
+      }&key=` + "AIzaSyBKNr4loFrPgQrMHHgn-UrA2mVc1ROOMWI"
     );
     const data = await res.json();
     setSearchVideos(data?.items);
   };
 
-  {
-    console.log(searchVideos);
-  }
+  // sendVideoDetailHandler function
+  const sendVideoDetailHandler = () => {
+    dispatch(sendVideoDetail(searchQuery));
+  };
+
+  // Early return for the videos
+  if (!searchVideos) return;
 
   return (
-    <div className="mx-5 md:mx-7 mt-20 overflow-y-hidden">
-      <div>
+    <div className="flex flex-col md:gap-2 md:flex-row mx-5 md:mx-7 mt-20 overflow-y-hidden">
+      <div className="">
         <iframe
           width="622"
           height="360"
@@ -67,6 +72,17 @@ const WatchPage = () => {
           </h1>
           {isCommentOn && <CommentContainer />}
         </div>
+      </div>
+      <div className="flex flex-col gap-3 mt-4 md:mt-0 md:flex-1">
+        {searchVideos.map((video, index) => (
+          <Link
+            to={"/watch?v=" + video?.id?.videoId}
+            key={index}
+            onClick={sendVideoDetailHandler}
+          >
+            <CommentVideosCard info={video} />
+          </Link>
+        ))}
       </div>
     </div>
   );

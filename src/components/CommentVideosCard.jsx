@@ -3,7 +3,7 @@ import { calculateTimeDifference } from "../utils/calculationFunction";
 import { calculateTimeDistanceToNow } from "../utils/calculationFunction";
 import { IoSearchCircle } from "react-icons/io5";
 
-const SearchVideoCard = ({ info }) => {
+const CommentVideosCard = ({ info }) => {
   if (!info) return null;
   const { id, snippet } = info;
   const { publishedAt, thumbnails, title, channelTitle, description } = snippet;
@@ -13,29 +13,27 @@ const SearchVideoCard = ({ info }) => {
   const time = calculateTimeDifference(calcTime);
 
   return id?.kind != "youtube#video" ? null : (
-    <div className="flex flex-col md:flex-row gap-3 px-3 hover:cursor-pointer max-w-[400px] md:max-w-full">
+    <div className="flex gap-2">
       {/* left->thumbnail */}
       <div>
         <img
-          className="rounded-lg w-[26.1875rem] h-[13.125rem] md:h-[10rem] md:w-[300px] object-cover"
+          className="max-w-[140px] max-h-[11.5625rem] rounded-lg"
           src={thumbnails?.high?.url}
           alt="thumbnail"
         />
       </div>
       {/* right->video details */}
-      <div className="w-full md:max-w-[43.75rem] xl:max-w-full">
-        <h1 className="px-2 text-lg font-medium line-clamp-2">{title}</h1>
-        <div className="flex gap-1 items-center px-1 md:my-3">
+      <div className="">
+        <h1 className="font-medium line-clamp-1">{title}</h1>
+        <p className="text-gray-600">{"⌚ " + time}</p>
+        <div className="flex gap-1 items-center">
           <IoSearchCircle size={20} color="purple" />
-          <p className="max-w-[20rem] text-gray-700">{channelTitle}</p>
-          <p className="ml-2">{". " + time}</p>
+          <p className="text-gray-600">{channelTitle}</p>
         </div>
-        <p className="px-2 line-clamp-1 md:line-clamp-2 text-gray-700">
-          {"➡️ " + description}
-        </p>
+        <p className="line-clamp-1">{"➡️ " + description}</p>
       </div>
     </div>
   );
 };
 
-export default SearchVideoCard;
+export default CommentVideosCard;
