@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { GOOGLE_API_KEY } from "../utils/constants";
 import { Link, useParams } from "react-router-dom";
 import SearchVideoCard from "./SearchVideoCard";
+import { useDispatch } from "react-redux";
+import { sendVideoDetail } from "../utils/getVideoDetailsSlice";
 
 const SearchVideos = () => {
   const params = useParams();
@@ -21,10 +23,21 @@ const SearchVideos = () => {
     setSearchVideos(data?.items);
   };
 
+  // Now dispatch an action for send the search query to watch page
+  const dispatch = useDispatch();
+  // sendVideoDetailHandler function
+  const sendVideoDetailHandler = () => {
+    dispatch(sendVideoDetail(searchQuery));
+  };
+
   return (
     <div className="mt-16 md:ml-[70px] p-3 pt-5 flex flex-col gap-7">
       {searchVideos.map((video, index) => (
-        <Link to={"/watch?v=" + video?.id?.videoId} key={index}>
+        <Link
+          to={"/watch?v=" + video?.id?.videoId}
+          key={index}
+          onClick={sendVideoDetailHandler}
+        >
           <SearchVideoCard info={video} />
         </Link>
       ))}
