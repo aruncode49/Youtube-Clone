@@ -5,6 +5,7 @@ import { closeSideBarButtons } from "../utils/sideBarButtonSlice";
 import CommentContainer from "./CommentContainer";
 import CommentVideosCard from "./CommentVideosCard";
 import { Link } from "react-router-dom";
+import WatchPageShimmer from "./WatchPageShimmer";
 
 const WatchPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -49,10 +50,9 @@ const WatchPage = () => {
     dispatch(sendVideoDetail(searchQuery));
   };
 
-  // Early return for the videos
-  if (!searchVideos) return;
-
-  return (
+  return !searchVideos ? (
+    <WatchPageShimmer />
+  ) : (
     <div className="flex flex-col md:gap-2 md:flex-row mx-5 md:mx-7 mt-20 overflow-y-hidden">
       <div className="">
         <iframe
@@ -73,7 +73,7 @@ const WatchPage = () => {
           {isCommentOn && <CommentContainer />}
         </div>
       </div>
-      <div className="flex flex-col gap-3 mt-4 md:mt-0 md:flex-1">
+      <div className="flex flex-col gap-3 mt-4 md:mt-0 md:flex-1 mb-4">
         {searchVideos.map((video, index) => (
           <Link
             to={"/watch?v=" + video?.id?.videoId}

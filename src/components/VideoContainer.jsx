@@ -21,7 +21,7 @@ const VideoContainer = () => {
   return videos.length === 0 ? (
     <VideoShimmer />
   ) : (
-    <div className="mt-28 md:ml-[70px] p-3 pt-5 flex flex-wrap gap-y-8 gap-5 justify-center md:justify-normal ">
+    <div className="mt-28 md:ml-[70px] md:p-4 pt-5 flex flex-wrap gap-y-8 gap-5 justify-center md:justify-normal ">
       {videos.map((video) => (
         <Link to={"/watch?v=" + video.id} key={video.id}>
           <VideoCard info={video} />

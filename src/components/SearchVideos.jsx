@@ -30,7 +30,7 @@ const SearchVideos = () => {
   };
 
   return !searchVideos ? null : (
-    <div className="mt-16 md:ml-[70px] p-3 pt-5 flex flex-col gap-7">
+    <div className="mt-16 md:ml-[70px] md:p-3 pt-5 flex flex-col gap-7 justify-center">
       {searchVideos.map((video, index) => (
         <Link
           to={"/watch?v=" + video?.id?.videoId}
