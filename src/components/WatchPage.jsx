@@ -6,6 +6,7 @@ import CommentContainer from "./CommentContainer";
 import CommentVideosCard from "./CommentVideosCard";
 import { Link } from "react-router-dom";
 import WatchPageShimmer from "./WatchPageShimmer";
+import { GOOGLE_API_KEY } from "../utils/constants";
 
 const WatchPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -39,7 +40,7 @@ const WatchPage = () => {
     const res = await fetch(
       `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${
         searchQuery + "videos"
-      }&key=` + "AIzaSyBKNr4loFrPgQrMHHgn-UrA2mVc1ROOMWI"
+      }&key=` + GOOGLE_API_KEY
     );
     const data = await res.json();
     setSearchVideos(data?.items);

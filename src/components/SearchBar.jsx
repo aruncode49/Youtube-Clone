@@ -43,9 +43,15 @@ const SearchBar = () => {
             spellCheck={false}
             className="w-[50vw] outline-none text-base md:text-lg h-8 px-6 py-[1.125rem] border border-gray-500 rounded-l-full"
             value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            onFocus={() => setShowSuggestion(true)}
-            onBlur={() => setShowSuggestion(false)}
+            onChange={(e) => {
+              setSearchQuery(e.target.value);
+              setShowSuggestion(true);
+            }}
+            onBlur={() => {
+              setTimeout(() => {
+                setShowSuggestion(false);
+              }, 200);
+            }}
           />
         </div>
 
@@ -66,6 +72,7 @@ const SearchBar = () => {
             {suggestion.map((data, index) => (
               <li
                 key={index}
+                onTouchStart={() => handleSuggestionClick(data)}
                 onMouseDown={() => handleSuggestionClick(data)}
                 className="z-50 my-1 flex gap-2 items-center text-base px-3 py-1 font-medium hover:bg-[#F0F0F0] cursor-pointer"
               >

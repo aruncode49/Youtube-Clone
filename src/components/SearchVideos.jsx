@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import SearchVideoCard from "./SearchVideoCard";
 import { useDispatch } from "react-redux";
 import { sendVideoDetail } from "../utils/getVideoDetailsSlice";
+import { GOOGLE_API_KEY } from "../utils/constants";
 
 const SearchVideos = () => {
   const params = useParams();
@@ -16,7 +17,7 @@ const SearchVideos = () => {
   const getVideosFromSearch = async () => {
     const res = await fetch(
       `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${searchQuery}&key=` +
-        "AIzaSyBKNr4loFrPgQrMHHgn-UrA2mVc1ROOMWI"
+        GOOGLE_API_KEY
     );
     const data = await res.json();
     setSearchVideos(data?.items);
