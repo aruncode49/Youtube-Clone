@@ -10,6 +10,7 @@ import SubscriptionPage from "./components/SubscriptionPage";
 import LibraryPage from "./components/LibraryPage";
 import HistoryPage from "./components/HistoryPage";
 import WatchLaterPage from "./components/WatchLaterPage";
+import LikedVideosPage from "./components/LikedVideosPage";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
               <Route path="library" element={<LibraryPage />} />
               <Route path="history" element={<HistoryPage />} />
               <Route path="watchLater" element={<WatchLaterPage />} />
+              <Route path="likedVideos" element={<LikedVideosPage />} />
             </Route>
           </Routes>
         </div>
