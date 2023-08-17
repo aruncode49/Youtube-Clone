@@ -1,7 +1,5 @@
 import SearchBar from "./SearchBar";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { FaUserCircle } from "react-icons/fa";
-import { GrSearch } from "react-icons/gr";
 import Logo from "/youtube_logo.png";
 import { useDispatch } from "react-redux";
 import { toggleSideBar } from "../utils/sideBarSlice";
@@ -36,7 +34,11 @@ const Header = () => {
       </div>
       {/* User Icon */}
       <div className="p-1 hover:cursor-pointer">
-        <FaUserCircle size={30} />
+        <img
+          className="w-9 border-[1.5px] border-black rounded-full"
+          src="https://avatars.githubusercontent.com/u/112400317?v=4"
+          alt="UserIcon "
+        />
       </div>
     </div>
   );
