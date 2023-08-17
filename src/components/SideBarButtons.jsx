@@ -19,18 +19,24 @@ const SideBarButtons = () => {
           <p className="text-xs">Home</p>
         </div>
       </Link>
-      <div className="flex flex-col items-center justify-center gap-1 py-4 hover:bg-[#F0F0F0] hover:rounded-lg hover:cursor-pointer">
-        <MdAppShortcut size={22} />
-        <p className="text-xs">Shorts</p>
-      </div>
-      <div className="flex flex-col items-center justify-center gap-1 py-4 hover:bg-[#F0F0F0] hover:rounded-lg hover:cursor-pointer">
-        <MdOutlineSubscriptions size={22} />
-        <p className="text-xs">Subscriptions</p>
-      </div>
-      <div className="flex flex-col items-center justify-center gap-1 py-4 hover:bg-[#F0F0F0] hover:rounded-lg hover:cursor-pointer">
-        <MdVideoLibrary size={22} />
-        <p className="text-xs">Library</p>
-      </div>
+      <Link to={"/search/shorts"}>
+        <div className="flex flex-col items-center justify-center gap-1 py-4 hover:bg-[#F0F0F0] hover:rounded-lg hover:cursor-pointer">
+          <MdAppShortcut size={22} />
+          <p className="text-xs">Shorts</p>
+        </div>
+      </Link>
+      <Link to={"/subscription"}>
+        <div className="flex flex-col items-center justify-center gap-1 py-4 hover:bg-[#F0F0F0] hover:rounded-lg hover:cursor-pointer">
+          <MdOutlineSubscriptions size={22} />
+          <p className="text-xs">Subscriptions</p>
+        </div>
+      </Link>
+      <Link to={"/library"}>
+        <div className="flex flex-col items-center justify-center gap-1 py-4 hover:bg-[#F0F0F0] hover:rounded-lg hover:cursor-pointer">
+          <MdVideoLibrary size={22} />
+          <p className="text-xs">Library</p>
+        </div>
+      </Link>
     </div>
   );
 };

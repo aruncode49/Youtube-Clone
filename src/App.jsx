@@ -2,11 +2,11 @@ import { Provider } from "react-redux";
 import Body from "./components/Body";
 import Header from "./components/Header";
 import store from "./utils/store";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainContainer from "./components/MainContainer";
 import WatchPage from "./components/WatchPage";
 import SearchVideos from "./components/SearchVideos";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SubscriptionPage from "./components/SubscriptionPage";
 
 function App() {
   return (
@@ -20,6 +20,7 @@ function App() {
               <Route path="watch" element={<WatchPage />} />
               <Route path="search/:searchQuery" element={<SearchVideos />} />
               <Route path="search" element={<MainContainer />} />
+              <Route path="subscription" element={<SubscriptionPage />} />
             </Route>
           </Routes>
         </div>
