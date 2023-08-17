@@ -27,58 +27,78 @@ const SideBar = () => {
               Home
             </li>
           </Link>
-          <li className="flex items-center gap-4 px-3 py-2 rounded-lg hover:bg-gray-100 hover:cursor-pointer">
-            <MdAppShortcut />
-            Shorts
-          </li>
-          <li className="flex items-center gap-4 px-3 py-2 rounded-lg hover:bg-gray-100 hover:cursor-pointer">
-            <MdOutlineSubscriptions />
-            Subscriptions
-          </li>
+          <Link to={"/search/shorts"}>
+            <li className="flex items-center gap-4 px-3 py-2 rounded-lg hover:bg-gray-100 hover:cursor-pointer">
+              <MdAppShortcut />
+              Shorts
+            </li>
+          </Link>
+          <Link to={"/subscription"}>
+            <li className="flex items-center gap-4 px-3 py-2 rounded-lg hover:bg-gray-100 hover:cursor-pointer">
+              <MdOutlineSubscriptions />
+              Subscriptions
+            </li>
+          </Link>
         </ul>
       </section>
 
       {/* 4 Links */}
       <section className="pb-4 pt-4 border-b-[1.5px] border-gray-300">
         <ul>
-          <li className="flex items-center gap-4 px-3 py-2 rounded-lg hover:bg-gray-100 hover:cursor-pointer">
-            <MdVideoLibrary />
-            Library
-          </li>
-          <li className="flex items-center gap-4 px-3 py-2 rounded-lg hover:bg-gray-100 hover:cursor-pointer">
-            <GoHistory />
-            History
-          </li>
-          <li className="flex items-center gap-4 px-3 py-2 rounded-lg hover:bg-gray-100 hover:cursor-pointer">
-            <MdOutlineWatchLater />
-            Watch Later
-          </li>
-          <li className="flex items-center gap-4 px-3 py-2 rounded-lg hover:bg-gray-100 hover:cursor-pointer">
-            <AiOutlineLike />
-            Liked videos
-          </li>
+          <Link to={"/library"}>
+            <li className="flex items-center gap-4 px-3 py-2 rounded-lg hover:bg-gray-100 hover:cursor-pointer">
+              <MdVideoLibrary />
+              Library
+            </li>
+          </Link>
+          <Link to={"/history"}>
+            <li className="flex items-center gap-4 px-3 py-2 rounded-lg hover:bg-gray-100 hover:cursor-pointer">
+              <GoHistory />
+              History
+            </li>
+          </Link>
+          <Link to={"/watchLater"}>
+            <li className="flex items-center gap-4 px-3 py-2 rounded-lg hover:bg-gray-100 hover:cursor-pointer">
+              <MdOutlineWatchLater />
+              Watch Later
+            </li>
+          </Link>
+          <Link to={"/likedVideos"}>
+            <li className="flex items-center gap-4 px-3 py-2 rounded-lg hover:bg-gray-100 hover:cursor-pointer">
+              <AiOutlineLike />
+              Liked videos
+            </li>
+          </Link>
         </ul>
       </section>
 
       {/* Explore Section*/}
       <section className="pb-4 pt-4">
         <ul>
-          <li className="flex items-center gap-4 px-3 py-2 rounded-lg hover:bg-gray-100 hover:cursor-pointer">
-            <IoIosMusicalNote />
-            Music
-          </li>
-          <li className="flex items-center gap-4 px-3 py-2 rounded-lg hover:bg-gray-100 hover:cursor-pointer">
-            <AiOutlineTrophy />
-            Sports
-          </li>
-          <li className="flex items-center gap-4 px-3 py-2 rounded-lg hover:bg-gray-100 hover:cursor-pointer">
-            <SiYoutubegaming />
-            Gaming
-          </li>
-          <li className="flex items-center gap-4 px-3 py-2 rounded-lg hover:bg-gray-100 hover:cursor-pointer">
-            <MdMovie />
-            Movies
-          </li>
+          <Link to={"/search/music"}>
+            <li className="flex items-center gap-4 px-3 py-2 rounded-lg hover:bg-gray-100 hover:cursor-pointer">
+              <IoIosMusicalNote />
+              Music
+            </li>
+          </Link>
+          <Link to={"/search/sports"}>
+            <li className="flex items-center gap-4 px-3 py-2 rounded-lg hover:bg-gray-100 hover:cursor-pointer">
+              <AiOutlineTrophy />
+              Sports
+            </li>
+          </Link>
+          <Link to={"/search/gaming"}>
+            <li className="flex items-center gap-4 px-3 py-2 rounded-lg hover:bg-gray-100 hover:cursor-pointer">
+              <SiYoutubegaming />
+              Gaming
+            </li>
+          </Link>
+          <Link to={"/search/movies"}>
+            <li className="flex items-center gap-4 px-3 py-2 rounded-lg hover:bg-gray-100 hover:cursor-pointer">
+              <MdMovie />
+              Movies
+            </li>
+          </Link>
         </ul>
       </section>
     </div>

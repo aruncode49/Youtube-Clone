@@ -7,6 +7,7 @@ import WatchPage from "./components/WatchPage";
 import SearchVideos from "./components/SearchVideos";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SubscriptionPage from "./components/SubscriptionPage";
+import LibraryPage from "./components/LibraryPage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
               <Route path="search/:searchQuery" element={<SearchVideos />} />
               <Route path="search" element={<MainContainer />} />
               <Route path="subscription" element={<SubscriptionPage />} />
+              <Route path="library" element={<LibraryPage />} />
             </Route>
           </Routes>
         </div>
